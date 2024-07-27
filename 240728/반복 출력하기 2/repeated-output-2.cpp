@@ -6,6 +6,7 @@ void PrintStar(int n){
         return;
     PrintStar(n-1);
     cout << "HelloWorld" << "\n";
+    return;
 }
 
 int main() {

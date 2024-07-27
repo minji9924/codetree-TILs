@@ -12,6 +12,6 @@ void PrintStar(int n){
 int main() {
     int n;
     cin >> n;
-    PrintStar(4);
+    PrintStar(n);
     return 0;
 }

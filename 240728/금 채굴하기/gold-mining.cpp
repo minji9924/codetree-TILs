@@ -22,7 +22,7 @@ int main() {
         cin >> board[i][j];
     }
 
-    K = N-1;    
+    K = N;    
     int answer = 0;
     for (int k = 0; k <= K; k++) { 
         int cost = k * k + (k+1) * (k+1);

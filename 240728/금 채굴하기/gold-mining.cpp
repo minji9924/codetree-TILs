@@ -21,9 +21,8 @@ int main() {
     for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
         cin >> board[i][j];
     }
-    if (N % 2 == 0) K = N/2;
-    else K = (N-1)/2;
-    
+
+    K = N-1;    
     int answer = 1;
     for (int k = 1; k <= K; k++) { 
         int cost = k * k + (k+1) * (k+1);

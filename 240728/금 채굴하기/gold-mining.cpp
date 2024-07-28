@@ -23,8 +23,8 @@ int main() {
     }
 
     K = N-1;    
-    int answer = 1;
-    for (int k = 1; k <= K; k++) { 
+    int answer = 0;
+    for (int k = 0; k <= K; k++) { 
         int cost = k * k + (k+1) * (k+1);
         for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
             int num_gold = 0;

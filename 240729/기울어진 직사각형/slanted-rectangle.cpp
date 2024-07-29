@@ -22,7 +22,7 @@ int main() {
             int k1 = min(i-1, N-j-1); 
             for (int x = 1; x <= k1; x++) {
                 // 2, 4번 방향으로 몇번 움직일지
-                int k2 = min(i-x, j+x); 
+                int k2 = min(i-x, j+x-1); 
                 for (int y = 1; y <= k2; y++) {
                     int sum = 0;
                     

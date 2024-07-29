@@ -1,23 +1,31 @@
 #include <iostream>
 using namespace std;
-int arr[10];
-int index=1;
-int f(int a,int b){
-    if(arr[index]==0)
-        return a;
-    int max=1;
-    for(int i=2;i<=a;i++)
-        if(a%i==0 && b%i==0)
-            max=i;
-    index++;
 
-    return f(a*b/max,arr[index]);
+int n;
+int arr[11];
+
+int lcm(int a,int b){
+    int gcd = 1;
+    for(int i=1;i<=min(a,b);i++){
+            if(a%i ==0 && b%i==0)
+                gcd = i;
+    }
+    return a*b/gcd;
 }
+
+int GetLCMALL(int index){
+    if(index == 1)
+        return arr[1];
+    
+    return lcm(GetLCMALL(index - 1), arr[index]);
+}
+
+
 int main() {
     int n;
     cin>>n;
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=n;i++)
         cin>>arr[i];
-    cout<<f(arr[0],arr[1]);
+    cout<<GetLCMALL(n);
     return 0;
 }

@@ -22,19 +22,21 @@ int main() {
             int k1 = min(i-1, N-j); 
             for (int x = 1; x <= k1; x++) {
                 // 2, 4번 방향으로 몇번 움직일지
-                int k2 = min(i-k1, j+k1); 
-                for (int y = 1; y <= x; y++) {
+                int k2 = min(i-x, j+x); 
+                for (int y = 1; y <= k2; y++) {
                     int sum = 0;
-                    for (int k = 0; k <= k1; k++) {
+                    
+                    for (int k = 0; k <= x; k++) {
                         sum += board[i-k][j+k];
-                        sum += board[i-k2-k][j-k2+k];
-                        // cout << board[i-k][j+k] << ' ' << board[i-k2-k][j-k2+k];
+                        sum += board[i-y-k][j-y+k];
+                        
                     }
-                    for (int k = 1; k < k2; k++) {
+                    for (int k = 1; k < y; k++) {
                         sum += board[i-k][j-k];
-                        sum += board[i-k1-k][j-k1-k];
-                        // cout << board[i-k][j-k] << ' ' << board[i-k1-k][j-k1-k];
+                        sum += board[i-x-k][j+x-k];
+                        
                     }
+                    
                     // cout << "i, j, k1, k2, ans: " << i << ' ' <<  j << ' ' << x << ' ' << y << ' ' << sum <<'\n';
                     answer = max(sum, answer);
                 }

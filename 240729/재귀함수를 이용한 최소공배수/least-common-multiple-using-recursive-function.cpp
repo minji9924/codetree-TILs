@@ -17,7 +17,7 @@ int GetLCMALL(int index){
     if(index == 1)
         return arr[1];
     
-    return lcm(GetLCMALL(index - 1), arr[index]);
+    return lcm(GetLCMALL(index - 1), 1);
 }
 
 

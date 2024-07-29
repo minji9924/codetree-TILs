@@ -19,7 +19,7 @@ int main() {
         // 시작 위치가 i, j일 때
         if (check_start(i, j)) {
             // 1, 3번 방향으로 몇번 움직일지
-            int k1 = min(i-1, N-j); 
+            int k1 = min(i-1, N-j-1); 
             for (int x = 1; x <= k1; x++) {
                 // 2, 4번 방향으로 몇번 움직일지
                 int k2 = min(i-x, j+x); 

@@ -31,6 +31,7 @@ int main() {
 
     for (int i = 0; i < T; i++) {
         answer_belt = push_belt(init_belt);
+        init_belt = answer_belt;
     }
 
     for (int i = 0; i < N; i++) cout << answer_belt.belt_0[i] << ' ';

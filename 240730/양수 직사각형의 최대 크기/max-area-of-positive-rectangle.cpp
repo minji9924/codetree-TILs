@@ -52,7 +52,7 @@ int main() {
             }
         }
     }
-
-    cout << answer;
+    if (answer == 0) cout << -1;
+    else cout << answer;
     return 0;
 }

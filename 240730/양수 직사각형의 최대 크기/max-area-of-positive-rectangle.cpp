@@ -18,19 +18,14 @@ square s1;
 int is_positive(square s1) {
     for (int i = 0; i < N; i++) for (int j = 0; j < M; j++) {
         if ((i >= s1.lt.X && i <= s1.rb.X) && (j >= s1.lt.Y && j <= s1.rb.Y)) {
-            if (board[i][j] < 0) return 0;
+            if (board[i][j] <= 0) return 0;
         }
     }
     return 1;
 }
 
 int calculate_size(square s1) {
-    int size = 0;
-    for (int i = 0; i < N; i++) for (int j = 0; j < M; j++) {
-        if ((i >= s1.lt.X && i <= s1.rb.X) && (j >= s1.lt.Y && j <= s1.rb.Y)) {
-            size++;
-        }
-    }
+    int size = (s1.rb.X - s1.lt.X + 1) * (s1.rb.Y - s1.lt.Y + 1);
     return size;
 }
 

@@ -30,7 +30,7 @@ int explode(vector<int> explosion) {
         else if (type == 2) {
             int dx[4] = {-1, 0, 0, 1}, dy[4] = {0, -1, 1, 0};
             for (int d = 0; d < 4; d++) {
-                int nx = x + dx[d], ny = y;
+                int nx = x + dx[d], ny = y + dy[d];
                 if (nx >= 0 && nx < N && ny >= 0 && ny < N) {
                     if (new_board[x+dx[d]][y+dy[d]] == 0) sum++;
                     new_board[x+dx[d]][y+dy[d]] = 1;
@@ -40,7 +40,7 @@ int explode(vector<int> explosion) {
         else if (type == 3) {
             int dx[4] = {-1, -1, 1, 1}, dy[4] = {-1, 1, -1, 1};
             for (int d = 0; d < 4; d++) {
-                int nx = x + dx[d], ny = y;
+                int nx = x + dx[d], ny = y + dy[d];
                 if (nx >= 0 && nx < N && ny >= 0 && ny < N) {
                     if (new_board[x+dx[d]][y+dy[d]] == 0) sum++;
                     new_board[x+dx[d]][y+dy[d]] = 1;

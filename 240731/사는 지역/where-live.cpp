@@ -14,7 +14,14 @@ class Person{
         this->location = l;
     }
     Person(){}
+
 };
+
+bool compare(Person person1,Person person2){
+    if(person1.name > person2.name)
+        return true;
+    return false;
+}
 
 Person persons[10];
 
@@ -26,9 +33,9 @@ int main() {
         cin >> a >> b >> c;
         persons[i]=Person(a,b,c);
     }
-    sort(persons[10].name.begin(),persons[10].name.end());
-    cout << "name " << persons[n-1].name << "\n";
-    cout << "addr " << persons[n-1].address << "\n";
-    cout << "city " << persons[n-1].location << "\n";
+    sort(persons,persons+n,compare);
+    cout << "name " << persons[0].name << "\n";
+    cout << "addr " << persons[0].address << "\n";
+    cout << "city " << persons[0].location << "\n";
     return 0;
 }

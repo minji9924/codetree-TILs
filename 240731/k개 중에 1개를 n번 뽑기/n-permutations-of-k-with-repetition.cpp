@@ -6,7 +6,7 @@ int K, N;
 vector<int> answer;
 
 void Choose(int num, int max) {
-    if (num == N+2){
+    if (num == N){
         // cout << answer.size();
         for (int i = 0; i < N; i++) {
             cout << answer[i] << ' ';
@@ -25,7 +25,7 @@ void Choose(int num, int max) {
 int main() {
     cin >> K >> N;
 
-    Choose(N, K);
+    Choose(0, K);
 
     return 0;
 }

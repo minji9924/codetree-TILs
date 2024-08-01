@@ -51,6 +51,7 @@ void blow_wind(int r, bool d) {
             d = !d;
             move_board(i, d);
         }
+        else break;
     }
     d = orig_dir;
     // 아랫부분 전파
@@ -59,6 +60,7 @@ void blow_wind(int r, bool d) {
             d = !d;
             move_board(i, d);
         }
+        else break;
     }
 }
 

@@ -17,10 +17,10 @@ class St{
 };
 St st[1000];
 bool cmp(St st1, St st2){
-    if(st1.ht > st2.ht)
-        return true;
-    if(st1.wt > st2.wt)
-        return true;
+    if(st1.ht != st2.ht)
+        return st1.ht > st2.ht;
+    if(st1.wt != st2.wt)
+        return st1.wt > st2.wt;
     if((st1.ht == st2.ht) && (st1.wt == st2.wt))
         return st1.nm < st2.nm;
 }

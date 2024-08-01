@@ -29,6 +29,8 @@ int main() {
     int ht;
     double wt;
     string nm;
+	cout << fixed;
+	cout.precision(1);
     for(int i=0;i<5;i++){
         cin >> nm >> ht >> wt;
         st[i] = St(nm,ht,wt);

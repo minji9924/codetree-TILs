@@ -8,7 +8,7 @@ int main() {
     int month_2011[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
     string day[7] = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
     int sum = (month_2011[m2]+d2)-(month_2011[m1]+d1);
-    if(sum>0){
+    if(sum>=0){
         cout << day[sum%7];
     }
     else{

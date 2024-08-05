@@ -9,17 +9,22 @@ int main() {
     string day;
     string day_2024[7] = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
     cin >> day;
-    int cnt=0,i=i,sum=0;
+    int cnt=0,i=0,sum=0;
     while(1){
         if(day == day_2024[cnt])
             break;
         cnt++;
     }
+    d1+=cnt;
     while(1){
-        if(month_2024[])
-     
-        day+= day+cnt*i;
-
+        if(m1>=m2 && d1>d2)
+            break;
+        if(d1>month_2024[m1]){
+            m1++;
+            d1 = d1-month_2024[m1];
+        }
+        d1+=(i++)*7;
     }
+    cout << i;
     return 0;
 }

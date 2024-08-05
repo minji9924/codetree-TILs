@@ -9,7 +9,7 @@ int main() {
         n=n/2;
     }
     a[i]=n;
-    if(a[i] !=0)
+    if(a[i] !=0 || n==0)
         cout << a[i];
     for(int j=i-1;j>=0;j--){
         cout << a[j];

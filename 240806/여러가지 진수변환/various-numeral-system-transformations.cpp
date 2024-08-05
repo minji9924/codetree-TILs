@@ -9,8 +9,9 @@ int main() {
         n=n/b;
     }
     a[i] = n%b;
+    int tmp = i;
     for(int j=i;j>=0;j--){
-        if(a[j]==0)
+        if(tmp == j && a[j]==0)
             continue;
         else
             cout << a[j];

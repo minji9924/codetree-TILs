@@ -17,13 +17,14 @@ int main() {
     }
     d1+=cnt;
     while(1){
-        if(m1>=m2 && d1>d2)
-            break;
-        if(d1>month_2024[m1]){
+        if(d1>month_2024[m1-1]){
+            d1 -= month_2024[m1-1];
             m1++;
-            d1 = d1-month_2024[m1];
         }
-        d1+=(i++)*7;
+        if((m1>=m2 && d1>d2) || (m1 >= 13))
+            break;
+        i++;
+        d1+=7;
     }
     cout << i;
     return 0;

@@ -13,13 +13,15 @@ int main() {
         cin >> x >> d;
         int mov=0;
         if(d=='R'){
-            while(mov!= x){
+            while(mov!=x){
                 ckb[loc+ofst]++;
                 t[(loc++)+ofst]=1;
                 mov++;
             }
+            loc--;
         }
         else if(d=='L'){
+            loc++;
             while(mov!=x){
                 ckw[(--loc)+ofst]++;
                 t[(loc)+ofst]=2;
@@ -31,15 +33,17 @@ int main() {
     while(i<200020){
         if(ckb[i]>=2 && ckw[i]>=2){
             sum_g++;
-            //cout << "ckb[i]: "<< ckb[i] << "  ckw[i]: "<< ckw[i] <<"  sum_g: "<<sum_g <<'\n';
+            //cout <<"sum_g: "<<sum_g <<'\n';
             i++;
             continue;
         }
         if(t[i]==1){
-            sum_b++;          
+            sum_b++;       
+            //cout <<"sum_b: "<<sum_b <<'\n';   
         }
         else if(t[i]==2){
-            sum_w++;          
+            sum_w++;
+            //cout <<"sum_w: "<<sum_w <<'\n';       
         }
         i++;
     }

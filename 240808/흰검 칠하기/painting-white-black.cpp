@@ -33,17 +33,14 @@ int main() {
     while(i<200020){
         if(ckb[i]>=2 && ckw[i]>=2){
             sum_g++;
-            //cout <<"sum_g: "<<sum_g <<'\n';
             i++;
             continue;
         }
         if(t[i]==1){
-            sum_b++;       
-            //cout <<"sum_b: "<<sum_b <<'\n';   
+            sum_b++;        
         }
         else if(t[i]==2){
-            sum_w++;
-            //cout <<"sum_w: "<<sum_w <<'\n';       
+            sum_w++;    
         }
         i++;
     }

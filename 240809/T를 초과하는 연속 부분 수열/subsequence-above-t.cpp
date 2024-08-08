@@ -9,10 +9,7 @@ int main() {
         if(a[i]>t)
             cnt++;
         else{
-            if(a[i]>t)
-                cnt=1;
-            else
-                cnt=0;
+            cnt=0;
         }
         mx=max(cnt,mx);
     }

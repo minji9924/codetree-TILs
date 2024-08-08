@@ -19,10 +19,14 @@ bool is_explode() {
         }
         before = bombs[i];
     }
+
     if (cont >= M) {
         for (int x = bomb_size - cont; x < bomb_size; x++) bombs[x] = 0;
-        cont = 1;
+        flag = 1;
     }
+
+    if (bomb_size == 0) flag = 0;
+    // cout << "flag: "<< flag << '\n';
     return flag;
 }
 

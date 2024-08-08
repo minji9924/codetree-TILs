@@ -23,11 +23,9 @@ int main() {
     for(int i=2;i<1000020;i++){
         if((pos_a[i]>pos_b[i])&&(pos_a[i-1]<=pos_b[i-1])){
             ans++;
-            cout << i <<'\n';
         }
         else if((pos_b[i]>pos_a[i])&&(pos_b[i-1]<=pos_a[i-1])){
             ans++;
-            cout << i <<'\n';
         }
     }
     cout << ans++;

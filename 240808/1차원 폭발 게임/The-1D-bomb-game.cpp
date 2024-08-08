@@ -1,32 +1,34 @@
 #include <iostream>
+#include <deque>
 using namespace std;
 
 int N, M, bomb_size;
+deque<pair<int, int>> info;
 int bombs[101];
 
 bool is_explode() {
-    int before = bombs[0], cont = 1, flag = false;
+    int flag = 0;
+    info.emplace_back(bombs[0], 1);
+    if (M == 1) flag = 1;
     for (int i = 1; i < bomb_size; i++) {
-        if (bombs[i] == before) {
-            cont++;
-            if (cont >= M) flag = true;
+        if (bombs[i] == info.back().first && bombs[i] > 0) {
+            info.back().second++;
+            if (info.back().second >= M) flag = 1;
         }
         else {
-            if (cont >= M) {
-                for (int x = i-cont; x < i; x++) bombs[x] = 0;
-                cont = 1;
-            } 
+            info.emplace_back(bombs[i], 1);
         }
-        before = bombs[i];
     }
+    int curr = 0, s = info.size();
+    for (int i = 0; i < s; i++) {
+        if (info.front().second >= M) {
+            for (int i = curr; i < curr + info.front().second; i++) bombs[i] = 0;
 
-    if (cont >= M) {
-        for (int x = bomb_size - cont; x < bomb_size; x++) bombs[x] = 0;
-        flag = 1;
+        }
+        curr += info.front().second;
+        info.pop_front();
     }
-
-    if (bomb_size == 0) flag = 0;
-    // cout << "flag: "<< flag << '\n';
+    info.clear();
     return flag;
 }
 
@@ -48,6 +50,7 @@ int main() {
     bomb_size = N;
     while (is_explode()) {
         drop();
+        if (bomb_size == 0) break;
     }
 
     cout << bomb_size << '\n';

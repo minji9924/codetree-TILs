@@ -66,9 +66,9 @@ void merge(char dir) {
                 }
             }
             else if (dir == 'D') {
-                if (board[3-j][3-i] == board[2-j][3-j]) {
+                if (board[3-j][3-i] == board[2-j][3-i]) {
                     board[3-j][3-i] *= 2;
-                    board[2-j][3-j] = 0;
+                    board[2-j][3-i] = 0;
                 }
             }
         }

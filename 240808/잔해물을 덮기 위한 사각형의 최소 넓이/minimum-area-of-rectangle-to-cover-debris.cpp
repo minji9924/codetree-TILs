@@ -25,7 +25,6 @@ int main() {
             }
         }
     }
-    cout << sum << '\n';
     for(int p=xx1;p<xx2;p++){
         for(int q=yy1;q<yy2;q++){
             if(s[p][q]==1){
@@ -36,7 +35,6 @@ int main() {
             }
         }
     }
-    cout << "mxx: " << mxx << " mxy: " << mxy << ' ' << "mnx: " << mnx <<' ' << "mny: " << mny << '\n';
     if(!flag || !sum)
         cout << sum;
     else

@@ -2,13 +2,17 @@
 using namespace std;
 
 int main() {
-    int n,a[1000],cnt=0;
+    int n,a[1000],cnt=0,mx_cnt=0;
     cin >> n;
     for(int i=0;i<n;i++){
         cin >> a[i];
-        if(i==0||a[i]!=a[i-1])
-            cnt++;
+        if(i==0||a[i]!=a[i-1]){
+            cnt=1;
+            continue;
+        }
+        cnt++;
+        mx_cnt=max(cnt,mx_cnt);
     }
-    cout << cnt;
+    cout << mx_cnt;
     return 0;
 }

@@ -6,10 +6,14 @@ int main() {
     cin >> n >> t;
     for(int i=0;i<n;i++){
         cin >> a[i];
-        if(a[i]>t && a[i]>a[i-1])
+        if(a[i]>t)
             cnt++;
-        else
-            cnt=0;
+        else{
+            if(a[i]>t)
+                cnt=1;
+            else
+                cnt=0;
+        }
         mx=max(cnt,mx);
     }
     cout << mx;

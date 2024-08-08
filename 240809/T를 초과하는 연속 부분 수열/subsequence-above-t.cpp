@@ -6,9 +6,8 @@ int main() {
     cin >> n >> t;
     for(int i=0;i<n;i++){
         cin >> a[i];
-        if(i==0 || a[i] > t){
+        if(a[i]>t && a[i]>a[i-1])
             cnt++;
-        }
         else
             cnt=0;
         mx=max(cnt,mx);

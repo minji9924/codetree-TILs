@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n,m,t,a[2000002]={0},b[2000002]={0},loc=0,flag=0,ans=-1;
+    int n,m,t,a[2000002]={0},b[2000002]={0},loc=0,flag=0,ans=-1,tmp_a=0,tmp_b=0;
     char d;
     cin >> n >> m;
     int time=0;
@@ -36,9 +36,9 @@ int main() {
                 tmp++;
                 b[++time]=(--loc);
                 //cout << "time: " << time << " b[loc]: " <<loc << '\n';
-                if(b[loc]==a[loc]){
+                if(b[time]==a[time]){
                     flag=1;
-                    ans=time-1;
+                    ans=time;
                     break;
                 }
             }

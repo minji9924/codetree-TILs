@@ -23,21 +23,21 @@ int main() {
         }
     }
     for(int i=2;i<time_a;i++){
-        if((pos_a[i]>pos_b[i])&&(pos_a[i-1]<=pos_b[i-1])){
-            ans++;
-        }
-        else if((pos_b[i]>pos_a[i])&&(pos_b[i-1]<=pos_a[i-1])){
-            ans++;
-        }
-        //if(pos_a[i]>pos_b[i])
-        //    flag=1;
-        //else if(pos_b[i]>pos_a[i])
-        //    flag=-1;
-        //if(k!=flag){
+        //if((pos_a[i]>pos_b[i])&&(pos_a[i-1]<=pos_b[i-1])){
         //    ans++;
-            //cout << "i: " << i << " pos_a: "<< pos_a[i] << " pos_b: " << pos_b[i] << '\n';
         //}
-        //k=flag;
+        //else if((pos_b[i]>pos_a[i])&&(pos_b[i-1]<=pos_a[i-1])){
+        //    ans++;
+        //}
+        if(pos_a[i]>pos_b[i])
+            flag=1;
+        else if(pos_b[i]>pos_a[i])
+            flag=-1;
+        if(k!=flag){
+            ans++;
+            //cout << "i: " << i << " pos_a: "<< pos_a[i] << " pos_b: " << pos_b[i] << '\n';
+        }
+        k=flag;
     }
     cout << ans-1;
     return 0;

@@ -22,7 +22,7 @@ int main() {
             //cout << "posb: " << pos_b[tb] << '\n';
         }
     }
-    for(int i=2;i<time_a;i++){
+    for(int i=0;i<time_a;i++){
         //if((pos_a[i]>pos_b[i])&&(pos_a[i-1]<=pos_b[i-1])){
         //    ans++;
         //}

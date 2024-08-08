@@ -6,11 +6,12 @@ int main() {
     cin >> n;
     for(int i=0;i<n;i++){
         cin >> a[i];
-        if(i==0||a[i]!=a[i-1]){
-            cnt=1;
-            continue;
+        if(i==0||a[i]==a[i-1]){
+            cnt++;
         }
-        cnt++;
+        else{
+            cnt=1;
+        }
         mx_cnt=max(cnt,mx_cnt);
     }
     cout << mx_cnt;

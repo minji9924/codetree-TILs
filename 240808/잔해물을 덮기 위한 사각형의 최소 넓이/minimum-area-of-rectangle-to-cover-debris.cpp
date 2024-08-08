@@ -8,10 +8,10 @@ int main() {
         for(int p=x1;p<x2;p++){
             for(int q=y1;q<y2;q++){
                 if(i==0){
-                    xx1=x1;
-                    yy1=y1;
-                    xx2=x2;
-                    yy2=y2;
+                    xx1=x1+of;
+                    yy1=y1+of;
+                    xx2=x2+of;
+                    yy2=y2+of;
                     s[p+of][q+of]=1;
                 }
                 else{
@@ -23,7 +23,7 @@ int main() {
     
     for(int p=xx1;p<xx2;p++){
         for(int q=yy1;q<yy2;q++){
-            if(s[p+of][q+of]==1){
+            if(s[p][q]==1){
                 mxx = max(mxx,p);
                 mxy = max(mxy,q);
             }

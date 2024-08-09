@@ -44,30 +44,29 @@ void rearrange_board() {
 
 void explode() {
     // 각 열에 대해서 폭탄 터트리기
-    int flag = 1; 
+    int flag = 1;
     while (flag) {
         int count = 0;
         for (int j = 0; j < N; j++) {
-        for (int i = 0; i <= N-M; i++) {
-            if (board[i][j] > 0) {
-                int jump = explode_if_possible(i, j);
-                if (jump > 1) i += jump-1;
-                if (jump > 0) count++;
+            for (int i = 0; i <= N-M; i++) {
+                if (board[i][j] > 0) {
+                    int jump = explode_if_possible(i, j);
+                    if (jump > 0) count++;
+                    if (jump > 1) i += jump-1;
+
                 }
             }
         }
         if (count == 0) flag = 0;
-    } 
-    
-
-    rearrange_board();
+        rearrange_board();
+    }
 }
 
 void rotate_90() {
     int new_board[101][101] = {0};
     for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
-        new_board[j][N-1-i] = board[i][j];
-    }
+            new_board[j][N-1-i] = board[i][j];
+        }
     for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) board[i][j] = new_board[i][j];
     rearrange_board();
 }
@@ -80,13 +79,13 @@ int main() {
 
     for (int i = 0; i < K; i++) {
         explode();
-        rotate_90(); 
-        explode();  
+        rotate_90();
+        explode();
     }
     int bomb_number = 0;
     for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
-        if (board[i][j] > 0) bomb_number++;
-    }
+            if (board[i][j] > 0) bomb_number++;
+        }
     cout << bomb_number;
     return 0;
 }

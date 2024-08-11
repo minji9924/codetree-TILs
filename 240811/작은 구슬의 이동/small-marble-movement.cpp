@@ -12,9 +12,9 @@ int dir_num(char a){
         return 3;
     else if(a=='R')
         return 0;
-    else if(a=='U')
-        return 1;
     else if(a=='D')
+        return 1;
+    else if(a=='U')
         return 2;
     
 }
@@ -24,8 +24,6 @@ int main() {
     cin >> n >> t;
     cin >> r >> c >> dir;
     int d = dir_num(dir);
-    int rr=r-1;
-    int cc=c-1;
     int flag=0;
     while(t--){
         if(!InRange(r+dy[d],c+dx[d],n) && !flag){

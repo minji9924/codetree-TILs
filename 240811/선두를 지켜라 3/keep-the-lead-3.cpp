@@ -3,8 +3,8 @@ using namespace std;
 
 int main() {
     int n,m,v,t,loc=0,time=0,flag=0,cnt=0;
-    int pos_a[1002]={0};
-    int pos_b[1002]={0};
+    int pos_a[2000000]={0};
+    int pos_b[2000000]={0};
     
     cin >> n >> m;
     for(int i=0;i<n;i++){

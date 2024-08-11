@@ -5,7 +5,7 @@ int dx[4]={1,0,0,-1};
 int dy[4]={0,1,-1,0};
 
 bool InRange(int x,int y,int n){
-    return (x>=1 && y>=1 && y<n && x<n);
+    return (x>=1 && y>=1 && y<=n && x<=n);
 }
 int dir_num(char a){
     if(a=='L')

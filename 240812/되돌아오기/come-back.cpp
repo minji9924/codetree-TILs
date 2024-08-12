@@ -13,7 +13,7 @@ int DirNum(char a){
         return 0;
     else if(a=='W')
         return 1;
-    else if(a=='N')
+    else if(a=='S')
         return 2;
     else
         return 3;
@@ -21,7 +21,7 @@ int DirNum(char a){
 
 int main() {
     int n,dist,dir_num,x=0,y=0,cnt=0,flag=0;
-    int s[100][100]={0};
+    int s[1000][1000]={0};
     char dir;
     cin >> n;
 
@@ -29,16 +29,18 @@ int main() {
         cin >> dir >> dist;
         dir_num=DirNum(dir);
         for(int j=0;j<dist;j++){
-            if(InRange(x+dx[dir_num],y+dy[dir_num],n)){
+            if(InRange(x+dx[dir_num],y+dy[dir_num],1000)){
                 x=x+dx[dir_num];
                 y=y+dy[dir_num];
                 cnt++;
+                
                 if(x==0 && y==0){
                     flag=1;
                     break;
                 }
                 s[x][y]=cnt;
             }
+            //cout << dir_num << ' ' << x << ' ' << y << ' ' << x+dx[dir_num] << ' ' << y+dy[dir_num] << '\n';
         }
         if(flag)
             break;

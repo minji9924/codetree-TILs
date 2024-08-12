@@ -31,9 +31,11 @@ int escape_maze(int x, int y, int dir) {
     int length = 0;
     while (true) {
         // 전진 방향이 막혀있는 경우
+        int turn_count = 0;
         while (!check_forward(x, y, dir)) {
             dir = (3 - dir) % 4;
         }
+        if (length > 0 && x == X && y == Y) return -1;
         int nx = x + dx[dir], ny = y + dy[dir]; // 한칸 이동한 위치
         int new_dir = (dir + 1) % 4; // 시계방항 회전
         int ndx = nx +dx[new_dir], ndy = ny + dy[new_dir]; // 이동 후 오른쪽 벽 위치

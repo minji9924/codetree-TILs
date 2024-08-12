@@ -2,6 +2,7 @@
 // Created by Minji Jun on 8/12/24.
 //
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int N, X, Y;
@@ -33,7 +34,7 @@ int escape_maze(int x, int y, int dir) {
     while (true) {
         // 전진 방향이 막혀있는 경우
         while (!check_forward(x, y, dir)) {
-            dir = (3 - dir) % 4;
+            dir = abs(dir - 1) % 4;
         }
         if (length > 0 && x == X-1 && y == Y-1) return -1;
         int nx = x + dx[dir], ny = y + dy[dir]; // 한칸 이동한 위치

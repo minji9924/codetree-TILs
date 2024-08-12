@@ -18,7 +18,7 @@ int main() {
     cin >> dir;
     for(int i=0;i<dir.size();i++){
         if(dir[i]=='L' || dir[i]=='R')
-            dir_num += (Dir(dir[i])+4)%4;
+            dir_num = (dir_num + Dir(dir[i])+4)%4;
         else{
             x+=dx[dir_num];
             y+=dy[dir_num];

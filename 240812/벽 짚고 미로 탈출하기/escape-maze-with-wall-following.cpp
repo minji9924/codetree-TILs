@@ -16,6 +16,7 @@ int check_possible() {
             count++;
         }
     }
+    if (count == 4*N-4) return 0;
     if (count > 0) return 1;
     else return 0;
 }

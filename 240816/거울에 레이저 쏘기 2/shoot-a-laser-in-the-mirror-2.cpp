@@ -24,7 +24,7 @@ int main() {
         }
     }
     cin >> k;
-    arr = k/(n+1);
+    arr = (k-1)/(n);
     if(arr==0){
         r=0;
         c=k%(n)-1;
@@ -50,6 +50,7 @@ int main() {
     while(IsRange(r,c,n)){
         //cout << r << ' ' << c << ' ' << dir << '\n';
         if(dir==0){
+            //cout << "dir0" << '\n';
             if(s[r][c] == '/'){
                 cnt++;
                 dir=1;
@@ -64,6 +65,7 @@ int main() {
             }
         }
         else if(dir==1){
+            //cout << "dir1" << '\n';
             if(s[r][c] == '/'){
                 cnt++;
                 dir=0;
@@ -77,7 +79,8 @@ int main() {
                 c=c+dc[dir];         
             }
         }
-        else if(dir=2){
+        else if(dir==2){
+            //cout << "dir2" << '\n';
             if(s[r][c] == '/'){
                 cnt++;
                 dir=3;
@@ -92,6 +95,7 @@ int main() {
             }
         }
         else{
+            //cout << "dir3" << '\n';
             if(s[r][c] == '/'){
                 cnt++;
                 dir=2;

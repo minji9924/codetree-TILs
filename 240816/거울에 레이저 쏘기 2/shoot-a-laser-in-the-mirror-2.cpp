@@ -27,22 +27,22 @@ int main() {
     arr = k/(n+1);
     if(arr==0){
         r=0;
-        c=k%n-1;
+        c=k%(n)-1;
         dir=0;
     }
     else if(arr==1){
-        r=k%n-1;
+        r=k-n-1;
         c=n-1;
         dir=1;
     }
     else if(arr==2){
         r=n-1;
-        c=2-k%n;
+        c=n*3-k;
         dir=2;
     }
     else{
-        r=0;
-        c=2-k%n;
+        r=n*4-k;
+        c=0;
         dir=3;
     }
     //cout << arr << ' ' << r << ' ' << c << ' ' << dir << '\n';

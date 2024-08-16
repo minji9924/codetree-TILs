@@ -7,6 +7,7 @@ int main() {
     cin >> N;
     for (int i = 0; i < N; i++) cin >> num[i];
 
+    fill(&dp[0], &dp[1000], 1);
     dp[0] = 1;
 
     for (int i = 1; i < N; i++) {

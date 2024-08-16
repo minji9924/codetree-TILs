@@ -9,7 +9,6 @@ int main() {
     for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
         cin >> board[i][j];
     }
-    fill(&dp[0][0], &dp[N-1][N], 1000001);
     dp[0][0] = board[0][0];
     for (int i = 1; i < 8; i++) {
         dp[i][0] = min(dp[i-1][0], board[i][0]);

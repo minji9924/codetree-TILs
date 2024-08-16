@@ -14,28 +14,30 @@ void get_input() {
         cin >> board[i][j];
         LowerBound = min(LowerBound, board[i][j]);
         UpperBound = max(UpperBound, board[i][j]);
+        
     }
 }
 
 void find_path(int LowerBound) {
+    for (int i = 0; i < N; i++) for (int j = 0; j < N; j++) {
+        dp[i][j] = MAX;
+        if (board[i][j] < LowerBound) board[i][j] = MAX;
+    }
+
+    dp[0][0] = board[0][0];
     
     for (int i = 1; i < N; i++) {
-        if (board[i][0] >= LowerBound) {
-            dp[i][0] = max(dp[i-1][0], board[i][0]);
-        } else dp[i][0] = MAX;
-        if (board[i][0] >= LowerBound) {
-            dp[0][i] = max(dp[0][i-1], board[0][i]);
-        } else dp[0][i] = MAX;
+        dp[i][0] = max(dp[i-1][0], board[i][0]);
+        dp[0][i] = max(dp[0][i-1], board[0][i]);
     }
-    
 
     for (int i = 1; i < N; i++) for (int j = 1; j < N; j++) {
-        if (board[i][j] >= LowerBound) {
-            dp[i][j] = max(min(dp[i-1][j], dp[i][j-1]), board[i][j]);
-        } else dp[i][j] = MAX;
+        dp[i][j] = max(min(dp[i-1][j], dp[i][j-1]), board[i][j]);
     }
 
-    answer = min(answer, dp[N-1][N-1] - LowerBound);
+    if (dp[N-1][N-1] != MAX) {
+        answer = min(answer, dp[N-1][N-1] - LowerBound);
+    }
 }
 
 int main() {

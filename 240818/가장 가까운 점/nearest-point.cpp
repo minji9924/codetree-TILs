@@ -14,6 +14,11 @@ struct point {
 
 struct cmp {
   bool operator()(point a, point b) {
+    if (a.dist == b.dist) {
+        if (a.X == b.X) return a.Y > b.Y;
+        else return a.X > b.X;
+    }
+
     return a.dist > b.dist;
   }
 };

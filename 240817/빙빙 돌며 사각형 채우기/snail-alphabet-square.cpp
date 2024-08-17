@@ -19,6 +19,8 @@ int main() {
             s[r][c]=cnt++;
             if(!IsRange(r+dr[dir],c+dc[dir],n,m) || s[r+dr[dir]][c+dc[dir]] != 0)
                 dir=(dir+1)%4;
+            if(cnt>=27)
+                cnt=cnt%26;
             r=r+dr[dir];
             c=c+dc[dir];
         }

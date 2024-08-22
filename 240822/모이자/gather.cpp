@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n,p[102],sum=0,mn=1000;
+    int n,p[102],sum=0,mn=1000000000;
     cin >> n;
     for(int i=0;i<n;i++){
         cin >> p[i];

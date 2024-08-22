@@ -10,11 +10,6 @@ int main() {
             cin >> chr[i][j];
         }
     }
-    // for(int i=1;i<r-1;i++){
-    //     for(int j=1;j<c-1;j++){
-    //         if(chr[str_r][str_c] != chr[i][j] && i >= str_r+1 && j >= str_c+1)
-    //     }
-    // }
     for(int i=1;i<r-2;i++){
         for(int j=1;j<c-2;j++){
             if(chr[str_r][str_c] != chr[i][j]){

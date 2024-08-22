@@ -20,7 +20,7 @@ int main() {
             if(chr[str_r][str_c] != chr[i][j]){
                     for(int p=i+1;p<r-1;p++){
                         for(int q=j+1;q<c-1;q++){
-                            if(chr[i][j]!=chr[p][q]){
+                            if(chr[r-1][c-1]!=chr[p][q] && chr[i][j]!=chr[p][q]){
                                 sum++;
                             }
                         }

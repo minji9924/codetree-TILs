@@ -18,8 +18,8 @@ int main() {
             if(a[i][j+2]==1)
                 sum++;
             mx=max(sum,mx);
+            sum=0;
         }
-        sum=0;
     }
     cout << mx;
     return 0;

@@ -45,6 +45,16 @@ int main() {
                     tmp=3;
                 }
             }
+            if(i<=15 && j>=5){
+                if(a[i][j]==1 && a[i+1][j-1]==1 && a[i+2][j-2]==1 && a[i+3][j-3]==1 && a[i+4][j-4]==1){
+                    win1=1;
+                    tmp=4;
+                }
+                if(a[i][j]==2 && a[i+1][j-1]==2 && a[i+2][j-2]==2 && a[i+3][j-3]==2 && a[i+4][j-4]==2){
+                    win2=1;
+                    tmp=4;
+                }
+            }            
             if(win1 || win2){
                 if(tmp==1){
                     r=i;
@@ -57,6 +67,10 @@ int main() {
                 else if(tmp==3){
                     r=i+2;
                     c=j+2;
+                }
+                else if(tmp==4){
+                    r=i+2;
+                    c=j-2;
                 }
                 break;
             }

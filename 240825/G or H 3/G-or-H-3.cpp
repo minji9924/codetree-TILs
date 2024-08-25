@@ -3,14 +3,14 @@ using namespace std;
 
 int main() {
     int n,k,pos,mnp=10004,mxp=0,score=0,mx=0;
-    char c[10000000];
+    char c[100000005];
     cin >> n >> k;
     for(int i=0;i<n;i++){
         cin >> pos >> c[pos];
         mnp=min(pos,mnp);
         mxp=max(pos,mxp);
     }
-    for(int i=1;i<=mxp-k;i++){
+    for(int i=0;i<=10005;i++){
         int tmp=k+1;
         while(tmp){
             if(c[i+(k+1)-tmp]=='G')

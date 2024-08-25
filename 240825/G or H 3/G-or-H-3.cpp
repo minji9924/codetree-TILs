@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int n,k,pos,mnp=10004,mxp=0,score=0,mx=0;
-    char c[10005];
+    char c[10000000];
     cin >> n >> k;
     for(int i=0;i<n;i++){
         cin >> pos >> c[pos];

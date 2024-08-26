@@ -1,8 +1,11 @@
 #include <iostream>
+#include <algorithm>
+#include <climits>
+
 using namespace std;
 
 int main() {
-    int n,h,t,ht[101]={0},mn=1001;
+    int n,h,t,ht[101]={0},mn=INT_MAX;
     cin >> n >> h >> t;
     for(int i=0;i<n;i++){
         cin >> ht[i];

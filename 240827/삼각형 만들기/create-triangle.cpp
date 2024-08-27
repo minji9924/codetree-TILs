@@ -24,7 +24,7 @@ int main() {
             }            
         }
         ext=dst_mxx*dst_mxy;
-        mx_ext=(mx_ext,ext);
+        mx_ext=max(mx_ext,ext);
     }
     cout << mx_ext;
     return 0;
